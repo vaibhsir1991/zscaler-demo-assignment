@@ -10,11 +10,8 @@ interface TableProps {
 }
 
 const Table = ({ data }: TableProps) => {
-  const [columns, setColumns] = useState<GridColumns>();
   const { showToaster } = React.useContext(ToasterContext);
-
-  useEffect(() => {
-    setColumns([
+  const columns = [
       {
         field: 'timestamp',
         headerName: 'Time',
@@ -50,8 +47,7 @@ const Table = ({ data }: TableProps) => {
       { field: 'decoy_ip', headerName: 'Decoy IP', width: 100, hide: true },
       { field: 'decoy_port', headerName: 'Decoy Port', width: 100, hide: true },
       { field: 'decoy_type', headerName: 'Decoy Type', width: 120, hide: true },
-    ]);
-  }, [data]);
+  ];
 
   return (
     <div style={{ height: 540, width: '100%', marginTop: '16px' }}>
