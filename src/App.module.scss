@@ -1,0 +1,42 @@
+@import '~@mbkit/theme/dist/theme.scss';
+@import '~@mbkit/theme/dist/breakpoints.scss';
+
+$font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial';
+
+body {
+  font-family: $font-family !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: $secondary-base !important;
+
+  &:hover {
+    color: $neutral-darkest !important;
+  }
+}
+
+p {
+  color: $tertiary-base;
+}
+
+button {
+  text-shadow: none !important;
+  line-height: normal !important;
+  font-weight: normal !important;
+}
+
+.flexDiv {
+  display: flex;
+}
+
+.subHeadText {
+  font-size: 14px !important;
+  color: $tertiary-base !important;
+}
+
+@mixin flexBox($justifyContent, $alignItems) {
+  @extend .flexDiv;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
